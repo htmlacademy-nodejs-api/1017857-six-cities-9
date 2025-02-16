@@ -1,7 +1,7 @@
-import {Location} from "./location.type.js";
-import {City} from "./city.type.js";
-import {OfferType} from "./offer-type.enum.js";
-import {Host} from "./host.type.js";
+import {Location} from './location.type.js';
+import {City} from './city.type.js';
+import {OfferType} from './offer-type.enum.js';
+import {Host} from './host.type.js';
 
 export type Offer = {
   id: string;

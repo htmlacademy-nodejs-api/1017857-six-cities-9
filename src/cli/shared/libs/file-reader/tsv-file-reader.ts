@@ -1,7 +1,7 @@
-import { readFileSync } from "node:fs";
+import { readFileSync } from 'node:fs';
 
-import { FileReader } from "./file-reader.interface.js";
-import {City, CityName, Host, Location, Offer, OfferType} from "../../types/index.js";
+import { FileReader } from './file-reader.interface.js';
+import {City, CityName, Host, Location, Offer, OfferType} from '../../types/index.js';
 
 
 export class TSVFileReader implements FileReader {
@@ -59,7 +59,7 @@ export class TSVFileReader implements FileReader {
       host: this.parseHost(host),
       images: this.parseImages(images),
       maxAdults: this.parseStringToNumber(maxAdults)
-    }
+    };
   }
 
   private parsePrice(priceString: string): number {
@@ -94,15 +94,15 @@ export class TSVFileReader implements FileReader {
     return {
       name,
       avatarUrl,
-      isPro: isPro === "true",
+      isPro: isPro === 'true',
     };
   }
 
   private parseGoods(goodsString: string): string[] {
-    const goodsArray = goodsString.split("|").map((good) => good.trim()).filter((good) => good.length > 0);
+    const goodsArray = goodsString.split('|').map((good) => good.trim()).filter((good) => good.length > 0);
 
     if (goodsArray.length === 0) {
-      throw new Error("No valid goods found.");
+      throw new Error('No valid goods found.');
     }
 
     return goodsArray;

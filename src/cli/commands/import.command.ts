@@ -1,6 +1,6 @@
 import { Command } from './command.interface.js';
-import {TSVFileReader} from "../shared/libs/file-reader/index.js";
-import chalk from "chalk";
+import {TSVFileReader} from '../shared/libs/file-reader/index.js';
+import chalk from 'chalk';
 
 export class ImportCommand implements Command {
   public getName(): string {
@@ -13,7 +13,7 @@ export class ImportCommand implements Command {
 
     try {
       fileReader.read();
-      console.log(chalk.green.bold("✔ Successfully imported data:"));
+      console.log(chalk.green.bold('✔ Successfully imported data:'));
       console.log(fileReader.toArray());
     } catch (error) {
       if (!(error instanceof Error)) {
